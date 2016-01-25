@@ -1,0 +1,81 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+
+    <display-name>GreetingServlet</display-name>
+
+    <servlet-name>GreetingServlet</servlet-name>
+
+    <servlet-class>org.wso2.examples.servlets.GreetingServlet</servlet-class>
+		
+
+  </servlet>
+
+  <servlet>
+
+    <display-name>ResponseServlet</display-name>
+
+    <servlet-name>ResponseServlet</servlet-name>
+
+    <servlet-class>org.wso2.examples.servlets.ResponseServlet</servlet-class>
+
+  </servlet>
+
+  <servlet-mapping>
+
+    <servlet-name>GreetingServlet</servlet-name>
+
+    <url-pattern>/greeting</url-pattern>
+
+  </servlet-mapping>
+
+
+
+  <servlet-mapping>
+
+    <servlet-name>ResponseServlet</servlet-name>
+
+    <url-pattern>/response</url-pattern>
+
+  </servlet-mapping>
+
+
+
+  <filter>
+    <filter-name>f1</filter-name>
+    <filter-class>org.wso2.examples.servlets.JWTSecurityFilter</filter-class>
+		 
+  </filter>
+  <filter-mapping>
+    <filter-name>f1</filter-name>
+    <url-pattern>/greeting</url-pattern>
+  </filter-mapping>
+
+  <error-page>
+    <error-code>403</error-code>
+    <location>/Error.jsp</location>
+  </error-page>
+
+  <security-constraint>
+    <display-name>SecurityConstraint</display-name>
+    <web-resource-collection>
+      <web-resource-name>WRCollection</web-resource-name>
+      <url-pattern>/greetings</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+
+
+
+
+</web-app>
