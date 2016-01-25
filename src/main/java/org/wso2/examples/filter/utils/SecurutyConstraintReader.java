@@ -17,8 +17,6 @@ public class SecurutyConstraintReader {
         String filePath = "securityinfo.xml";
         File file = new File(classLoader.getResource(filePath).getFile());
 
-//
-//           // File file = new File("securityinfo.xml");
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(SecurityInfo.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -28,14 +26,5 @@ public class SecurutyConstraintReader {
             e.printStackTrace();
             return null;
         }
-//
-
-
-
-//      //  } catch (JAXBException e) {
-//         //   e.printStackTrace();
-//            return new SecurityInfo(1, "reading error");
-
-
     }
 }
