@@ -1,18 +1,8 @@
 package org.wso2.examples.servlets;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.List;
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
-import java.util.ArrayList;
-import javax.servlet.http.HttpServletRequestWrapper;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.sling.commons.json.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -20,7 +10,14 @@ import org.wso2.examples.filter.utils.SecurityInfo;
 import org.wso2.examples.filter.utils.SecurutyConstraintReader;
 import sun.misc.BASE64Decoder;
 
-import org.apache.sling.commons.json.*;
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class JWTSecurityFilter implements Filter {

@@ -45,38 +45,12 @@ public class GreetingServlet extends HttpServlet {
                         + "<p></p>" + "<input type=\"submit\" value=\"Submit\">"
                         + "<input type=\"reset\" value=\"Reset\">" + "</form>");
 
-//
-//      FilterInformationReader reader =  new FilterInformationReader();
-//        JWTSecurityFilterInfo info = reader.read();
-////
-//
-////        if(info == null)
-////        {
-////            out.print("info is null");
-////        }
-//
-//       String role = info.getConstraint();
-
 
         SecurutyConstraintReader x= new SecurutyConstraintReader();
         SecurityInfo q = x.getSecurityInformations();
-        String role = q.getRoleName();
-        String res = q.getWebResourceName();
-        String pattern = q.getUrlPattern();
-//        List<Typer> li = q.getType();
-        //String type = q.getType().getType();
-
-
-        String username = request.getParameter("username");
-        Enumeration<String> names = request.getHeaderNames();
-        while(names.hasMoreElements()) {
-            out.println(names.nextElement());
-
-        }
-
         out.print("<h2>");
         out.print("User name :  " + request.getUserPrincipal().getName() + "<br>");
-        out.print("If there is a role admin print true else false : ----"+role+"-----"+res+"------"+pattern+"-----");
+        out.print("If there is a role admin print true else false : ");
         if(request.isUserInRole("admin"))
         {
             out.print("true");
@@ -86,16 +60,6 @@ public class GreetingServlet extends HttpServlet {
             out.print("false");
         }
         out.print("</h2>");
-
-        if ((username != null) && (username.length() > 0)) {
-            RequestDispatcher dispatcher = getServletContext()
-                    .getRequestDispatcher(
-                            "/response");
-
-            if (dispatcher != null) {
-                dispatcher.include(request, response);
-            }
-        }
 
         out.println("</body></html>");
         out.close();
