@@ -51,6 +51,9 @@ The way you want to define them in the securityinfo.xml ( Here do not keep – b
 Then copy Error.jsp to webapp folder, after that go to web.xml and define the filter as well as the error page as shown bellow.
 
 E.g
+		
+
+
 		<filter>
  		 	<filter-name>f1</filter-name>
  		 	<filter-class>org.wso2.JWTSecurityFilter</filter-class>
