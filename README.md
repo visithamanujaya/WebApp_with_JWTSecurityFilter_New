@@ -53,7 +53,7 @@ Then copy Error.jsp to webapp folder, after that go to web.xml and define the fi
 E.g
 		<filter>
  		 	<filter-name>f1</filter-name>
- 		 	<filter-class>org.wso2....JWTSecurityFilter</filter-class>
+ 		 	<filter-class>org.wso2.JWTSecurityFilter</filter-class>
 		</filter>
 
 		<filter-mapping>
@@ -65,4 +65,4 @@ E.g
   			<error-code>403</error-code>
   			<location>/Error.jsp</location>
 		</error-page>
-The modifications are finished now you can build your webapp, deploy on tomcat and publish on AppManager
+The modifications are finished now you can build your webapp, deploy on tomcat and publish on AppManag
