@@ -10,7 +10,6 @@
 package org.wso2.examples.servlets;
 
 import java.io.*;
-import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.annotation.security.DeclareRoles;
@@ -46,8 +45,8 @@ public class GreetingServlet extends HttpServlet {
                         + "<input type=\"reset\" value=\"Reset\">" + "</form>");
 
 
-        SecurutyConstraintReader x= new SecurutyConstraintReader();
-        SecurityInfo q = x.getSecurityInformations();
+        CustomDataReader x= new CustomDataReader();
+        CustomData q = x.getCustomData();
         out.print("<h2>");
         out.print("User name :  " + request.getUserPrincipal().getName() + "<br>");
         out.print("If there is a role admin print true else false : ");
